@@ -32,7 +32,7 @@ const AccordionList = ({
 		return openItem === index;
 	};
 	return (
-		<div data-testid="accordion-list">
+		<div data-testid="accordion-list" style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
 			{items.map((item, index) => (
 				<Accordion {...item} itemIndex={index} handleToggle={handleToggle} isOpen={isOpen(index)} />
 			))}
