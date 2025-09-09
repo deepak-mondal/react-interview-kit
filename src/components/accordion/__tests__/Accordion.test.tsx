@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest";
-import Accordion from "../Accordion";
+import Accordion, { type AccordionProps } from "../Accordion";
 import { render, screen } from "@testing-library/react";
 
 describe("Accordion tests", () => {
 	it("should render accordion without any errors", () => {
-		const accordionProps = {
+		const accordionProps: AccordionProps = {
 			title: "Accordion 1",
 			content: "Accordion 1 content",
 			itemIndex: 0,

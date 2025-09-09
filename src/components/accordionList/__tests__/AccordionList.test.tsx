@@ -1,24 +1,12 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import AccordionList from "../AccordionList";
+import AccordionList, { type AccordionListProps } from "../AccordionList";
+import { accordionItems } from "../../../shared/mocks/accordion.data";
 
 describe("Accordion tests", () => {
 	it("should render accordion without any errors", () => {
-		const accordionProps = {
-			items: [
-				{
-					title: "Accordion 1",
-					content: "Accordion 1 content",
-				},
-				{
-					title: "Accordion 2",
-					content: "Accordion 2 content",
-				},
-				{
-					title: "Accordion 3",
-					content: "Accordion 3 content",
-				},
-			],
+		const accordionProps: AccordionListProps = {
+			items: accordionItems,
 			allowMultiple: true,
 		};
 		render(<AccordionList {...accordionProps} />);
@@ -31,21 +19,8 @@ describe("Accordion tests", () => {
 		expect(accordionWrapper.length).toBe(3);
 	});
 	it("should open only one accordion at a time", () => {
-		const accordionProps = {
-			items: [
-				{
-					title: "Accordion 1",
-					content: "Accordion 1 content",
-				},
-				{
-					title: "Accordion 2",
-					content: "Accordion 2 content",
-				},
-				{
-					title: "Accordion 3",
-					content: "Accordion 3 content",
-				},
-			],
+		const accordionProps: AccordionListProps = {
+			items: accordionItems,
 			allowMultiple: false,
 		};
 
@@ -73,21 +48,8 @@ describe("Accordion tests", () => {
 	});
 
 	it("should open multiple accordion at a time", () => {
-		const accordionProps = {
-			items: [
-				{
-					title: "Accordion 1",
-					content: "Accordion 1 content",
-				},
-				{
-					title: "Accordion 2",
-					content: "Accordion 2 content",
-				},
-				{
-					title: "Accordion 3",
-					content: "Accordion 3 content",
-				},
-			],
+		const accordionProps: AccordionListProps = {
+			items: accordionItems,
 			allowMultiple: true,
 		};
 
